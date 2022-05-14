@@ -36,6 +36,14 @@ app.get('/compose', (req, res) => {
 // app.get('/post', (req, res) => {
 //   res.render('post', { posts })
 // })
+app.get('/posts/:title', (req, res) => {
+  console.log(req.params.title)
+  posts.map(post => {
+    if (post.title === req.params.title) {
+      console.log('match found')
+    }
+  })
+})
 
 app.post('/compose', (req, res) => {
   const postTitle = req.body.postTitle
